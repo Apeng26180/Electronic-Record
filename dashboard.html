@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - School Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-bg: #FFB75E;
+      --secondary-bg: #ED8F03;
+      --header-bg: rgba(0, 0, 0, 0.3);
+      --button-bg: #2ecc71;
+      --button-hover: #27ae60;
+      --logout-bg: #e74c3c;
+      --logout-hover: #c0392b;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+      color: #fff;
+      overflow: hidden;
+      will-change: opacity;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    header {
+      background: var(--header-bg);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .site-link {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+    .site-link:hover {
+      color: var(--primary-bg);
+      text-decoration: underline;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2em;
+    }
+    .logout {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background: var(--logout-bg);
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .logout:hover {
+      background: var(--logout-hover);
+    }
+    .logout:active {
+      transform: scale(0.97);
+    }
+    .container {
+      margin-top: 100px;
+      text-align: center;
+    }
+    .container button {
+      background: var(--button-bg);
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .container button:hover {
+      background: var(--button-hover);
+    }
+    .container button:active {
+      transform: scale(0.97);
+    }
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.6em;
+      }
+      header p {
+        font-size: 1em;
+      }
+      .container button {
+        padding: 12px 20px;
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="logout" onclick="logout()">Logout</button>
+    <!-- Clickable link that opens your website in a new tab -->
+    <h1><a href="https://www.electronicrecord.com" target="_blank" class="site-link">Electronic Record</a></h1>
+    <p>Welcome!</p>
+  </header>
+  <div class="container">
+    <button onclick="window.location.href='grading-record.html'">Create New Record</button>
+  </div>
+  <script>
+    function logout() {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
